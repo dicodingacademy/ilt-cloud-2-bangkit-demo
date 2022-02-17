@@ -27,7 +27,7 @@ const contacts = require("./contacts");
           contacts.push({ id, name, email, phone });
 
           response.statusCode = 201;
-          return response.end(JSON.stringify({ message: 'User created' }));
+          return response.end(JSON.stringify({ message: 'Contact added successfully' }));
         });
       }
     }
@@ -44,11 +44,11 @@ const contacts = require("./contacts");
           contacts.splice(index, 1);
 
           response.statusCode = 200;
-          return response.end(JSON.stringify({ message: 'User deleted' }));
+          return response.end(JSON.stringify({ message: 'Contact deleted successfully' }));
         }
 
         response.statusCode = 404;
-        return response.end(JSON.stringify({ message: 'User not found' }));
+        return response.end(JSON.stringify({ message: 'Contact not found' }));
       }
     }
   });
