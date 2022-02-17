@@ -7,7 +7,7 @@ const contacts = require("./contacts");
 
     const { url } = request;
 
-    if (url === '/users') {
+    if (url === '/contacts') {
       const { method } = request
 
       if (method === 'GET') {
@@ -32,7 +32,7 @@ const contacts = require("./contacts");
       }
     }
 
-    if (url.startsWith('/users/')) {
+    if (url.startsWith('/contacts/')) {
       const { method } = request;
 
       if (method === 'DELETE') {
