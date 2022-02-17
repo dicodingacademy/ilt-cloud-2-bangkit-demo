@@ -4,11 +4,11 @@
 
 Create the simple RESTFul API using Node.js Natively and Hapi Framework with the specification:
 
-| Method | Path | Response Code | Body | Description |
-| ------ | ---- | ------------- | ---- | ----------- |
-| GET    | /users | 200 | JSON | List of users |
-| POST   | /users | 201 | JSON | Create new user |
-| DELETE | /users/:id | 200 | JSON | Delete user |
+| Method | Path          | Response Code | Body | Description         |
+| ------ |---------------| ------------- | ---- |---------------------|
+| GET    | /contacts     | 200 | JSON | List of contacts    |
+| POST   | /contacts     | 201 | JSON | Create new contacts |
+| DELETE | /contacts/:id | 200 | JSON | Delete contacts     |
 
 User data structure:
 
