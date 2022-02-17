@@ -10,10 +10,6 @@ const contacts = require("./contacts");
     if (url === '/contacts') {
       const { method } = request
 
-      if (method === 'GET') {
-        return response.end(JSON.stringify(contacts));
-      }
-
       if (method === 'POST') {
         let body = '';
 
@@ -29,6 +25,10 @@ const contacts = require("./contacts");
           response.statusCode = 201;
           return response.end(JSON.stringify({ message: 'Contact added successfully' }));
         });
+      }
+
+      if (method === 'GET') {
+        return response.end(JSON.stringify(contacts));
       }
     }
 
