@@ -54,6 +54,6 @@ const contacts = require("./contacts");
   });
 
   server.listen(3000, 'localhost', () => {
-    console.log('Server running on port 3000');
+    console.log('Server running on http://localhost:3000');
   });
 })();
