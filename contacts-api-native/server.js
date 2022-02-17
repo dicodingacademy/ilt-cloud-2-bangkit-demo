@@ -7,8 +7,12 @@ const contacts = require("./contacts");
 
     const { url } = request;
 
-    if (url === '/contacts') {
+    if (url === '/users') {
       const { method } = request
+
+      if (method === 'GET') {
+        return response.end(JSON.stringify(contacts));
+      }
 
       if (method === 'POST') {
         let body = '';
@@ -23,16 +27,12 @@ const contacts = require("./contacts");
           contacts.push({ id, name, email, phone });
 
           response.statusCode = 201;
-          return response.end(JSON.stringify({ message: 'Contact added successfully' }));
+          return response.end(JSON.stringify({ message: 'User created' }));
         });
-      }
-
-      if (method === 'GET') {
-        return response.end(JSON.stringify(contacts));
       }
     }
 
-    if (url.startsWith('/contacts/')) {
+    if (url.startsWith('/users/')) {
       const { method } = request;
 
       if (method === 'DELETE') {
@@ -44,16 +44,16 @@ const contacts = require("./contacts");
           contacts.splice(index, 1);
 
           response.statusCode = 200;
-          return response.end(JSON.stringify({ message: 'Contact deleted successfully' }));
+          return response.end(JSON.stringify({ message: 'User deleted' }));
         }
 
         response.statusCode = 404;
-        return response.end(JSON.stringify({ message: 'Contact not found' }));
+        return response.end(JSON.stringify({ message: 'User not found' }));
       }
     }
   });
 
   server.listen(3000, 'localhost', () => {
-    console.log('Server running on http://localhost:3000');
+    console.log('Server running on port 3000');
   });
 })();
