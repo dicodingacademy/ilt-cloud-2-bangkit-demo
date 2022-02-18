@@ -1,4 +1,4 @@
-# Contact API using Native Node.js
+# Contact API using Hapi Framework
 
 #### prerequisites
 - Node.js version >= 12.x
